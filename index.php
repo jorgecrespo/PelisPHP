@@ -1,18 +1,9 @@
 <?php 
 // session_start();
-include("php/AdministradorSeguridad.php");
 
-	
-	
-		$administrador = new AdministradorSeguridad();
 
 //PARA OCULTAR WARNINGS Y NOTICES
 error_reporting(E_ERROR | E_WARNING | E_PARSE); 
-
-if(isset($_SESSION['usuario'])){  
-       $administrador->setUsuario($_SESSION['usuarioid'],$_SESSION['usuario'], $_SESSION['admin']);
-}
-
 ?>
 <!doctype html>
 <html>
@@ -29,7 +20,7 @@ if(isset($_SESSION['usuario'])){
   
 <?php    
     
-
+/*
  if (isset($_SESSION['usuario'])){
     echo "Usuario: ".$_SESSION['usuario']."<br> Usuario ID: ".$_SESSION['usuarioid']."<br>";
     echo "<a href='php/cerrarsesion.php'>Cerrar sesion</a>";
@@ -46,7 +37,7 @@ echo '<a href="php/backend.php">Backendd</a>';
 
         
 }
-
+*/
 require_once("php/header.php");
 
     
