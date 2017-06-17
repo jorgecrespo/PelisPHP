@@ -2,7 +2,7 @@
 // session_start();
 include("php/AdministradorSeguridad.php");
 
-	//comentario nuevo
+	
 	
 		$administrador = new AdministradorSeguridad();
 
