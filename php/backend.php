@@ -13,6 +13,10 @@
 <div style="padding:10px;">
     <?php
     session_start();
+
+    require_once("header.php");
+
+    
 if(!isset($_SESSION['admin'])){
    header("location:../index.php");
  

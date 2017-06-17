@@ -29,7 +29,7 @@ if(isset($_SESSION['usuario'])){
   
 <?php    
     
-//   include("php/header.php");
+
  if (isset($_SESSION['usuario'])){
     echo "Usuario: ".$_SESSION['usuario']."<br> Usuario ID: ".$_SESSION['usuarioid']."<br>";
     echo "<a href='php/cerrarsesion.php'>Cerrar sesion</a>";
@@ -47,7 +47,7 @@ echo '<a href="php/backend.php">Backendd</a>';
         
 }
 
-
+require_once("php/header.php");
 
     
 

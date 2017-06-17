@@ -10,6 +10,8 @@
 </head>
 <body>
 <?php
+require_once("header.php");
+
 require_once("funciones.php");
 
 $idpelicula = $_GET['peliculaid'];

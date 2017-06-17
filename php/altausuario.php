@@ -10,11 +10,11 @@
 
 </head>
 <body>
-
-
-<h2>Alta de usuarios</h2>
-
 <?php
+require_once("header.php");
+
+echo "<h2>Alta de usuarios</h2>";
+
 if (isset($_GET['alerta'])){
     echo "<h3>".$_GET['alerta']."</h3>";
 }

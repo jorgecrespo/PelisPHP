@@ -1,0 +1,2 @@
+validaciones
+    en alta de comentario la web permite el ingreso de comentario en blanco.

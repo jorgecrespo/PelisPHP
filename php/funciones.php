@@ -341,7 +341,7 @@ function detalleconcomentarios($conexion, $idpelicula, $idusuario){
             
             echo "<ul>";
          while ($fila2 = mysqli_fetch_array ($resultado2)) {
-             echo "<div class='panel panel-primary'><div class='panel-heading'><li>".$fila2['fecha']." <strong>".$fila2['nombre']." ".$fila2['apellido']."</strong> puntuó => ".$fila2['calificacion']."</div><br><div class='panel-body'>".$fila2['comentario']."</li></div></div></div>";
+             echo "<li><div class='panel panel-primary'><div class='panel-heading'>".$fila2['fecha']." <strong>".$fila2['nombre']." ".$fila2['apellido']."</strong> puntuó => ".$fila2['calificacion']."</div><br><div class='panel-body'>".$fila2['comentario']."</li>";
          }
             echo "</ul>";
         } else {

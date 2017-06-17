@@ -39,7 +39,9 @@ if (parametro.length>0){
    </script> 
 </head>
 <body>
-
+<?php
+require_once("header.php");
+?>
 
 <h2>Iniciar sesion</h2>
 <form action="controler.php" method="GET" onsubmit="return validarlogin();">
@@ -51,6 +53,9 @@ if (parametro.length>0){
      <input type="password" id="loginpass" class="form-control" name="password"><br>
 
 <?php
+
+
+
 if (isset($_GET['alerta'])){
     echo "<h3>".$_GET['alerta']."</h3>";
 }

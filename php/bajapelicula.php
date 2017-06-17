@@ -11,6 +11,8 @@
 <body>
 
 <?php
+require_once("header.php");
+
 require_once("funciones.php");
 echo '<h2>Esta seguro que desea eliminar esta pelicula?</h2>';
 
