@@ -1,6 +1,6 @@
 <?php
 require_once("funciones.php");
-$comentario = $_POST['comentario'];
+$comentario = $_POST['accomentario'];
 $puntaje = $_POST['puntaje'];
 $idusuario = $_POST['idusuario'];
 $idpelicula = $_POST['idpelicula'];

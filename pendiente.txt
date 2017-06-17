@@ -7,3 +7,6 @@ funcionalidad
 
 conexion
     unificarla en un archivo. sacarla del objeto $administradorSeguridad.php
+
+autorizacion
+    donde dice " if (isset($_SESSION['usuario'])){" reemplazarlo por consulta del objeto. es del alta de comentario en detalle pelicula.

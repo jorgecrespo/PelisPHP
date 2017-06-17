@@ -49,3 +49,13 @@ username:
 return false;
 }
 
+function validarcomentario(){
+var comentario;
+comentario = document.getElementById("accomentario1").value;
+
+if (comentario.length<6){
+
+alert("El comentario debe superar los 5 caracteres.")
+return false;
+}
+}

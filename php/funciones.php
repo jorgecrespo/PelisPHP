@@ -330,9 +330,9 @@ function detalleconcomentarios($conexion, $idpelicula, $idusuario){
         
         // si hay usuario -> formulario para ingresar nuevo comentario.
         if (isset($_SESSION['usuario'])){
-            echo "<form action='sqlaltacomentario.php' method='post'>";
+            echo "<form name ='frmcomentario' action='sqlaltacomentario.php' method='post' onsubmit='return validarcomentario()'>";
             echo ' <div class="form-group" style="width:600px; padding:20px">';
-            echo ' <label for="aunombre" id="accomentario">Comentario</label><textarea name="comentario" id="accomentario" class="form-control"></textarea><br>';
+            echo ' <label for="accomentario1" id="accomentario">Comentario</label><textarea name="accomentario" id="accomentario1" class="form-control"></textarea><br>';
             echo '<label for="aunombre" id="acpuntaje">Puntaje</label> <select name="puntaje" id="acpuntaje" class="form-control"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>';
             echo "<input type='hidden' name='idusuario' value=".$idusuario.">";
             echo "<input type='hidden' name='idpelicula' value=".$idpelicula.">";
