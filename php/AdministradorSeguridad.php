@@ -67,6 +67,11 @@ mysqli_set_charset($conexion, "utf8");
 	function usuarioLogeado(){
 		
 		return ($this->idUsuario); 
+	 
+} 
+function nombreUsuarioLogeado(){
+	
+		return ($this->nombreUsuario); 
 } 
 
 	function setUsuario($id, $nombre, $admin){

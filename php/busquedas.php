@@ -64,11 +64,14 @@ if (!$administrador->usuarioLogeado()){
      echo'  <li class="active"><a href="php/altausuario.php">Registrarse <span class="sr-only">(current)</span></a></li>
         <li><a href="php/singin.php">Iniciar Sesión</a></li>';
 } else {
+      echo'<li><a href="php/cerrarsesion.php">Cerrar Sesión</a></li>';
     if ($administrador->esAdministrador()){
         echo '<li class="active"><a href="php/backend.php">Backend<span class="sr-only">(current)</span></a></li>';
     }
 
-    echo'<li><a href="php/cerrarsesion.php">Cerrar Sesión</a></li>';
+  
+    echo'<li><a><b>'.$administrador->nombreUsuarioLogeado();
+    echo'</b></a></li>';
 }
 
 
