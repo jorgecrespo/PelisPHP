@@ -70,7 +70,7 @@ if (!$administrador->usuarioLogeado()){
     }
 
   
-    echo'<li><a><b>'.$administrador->nombreUsuarioLogeado();
+    echo'<li><a>Usuario: <b>'.$administrador->nombreUsuarioLogeado();
     echo'</b></a></li>';
 }
 

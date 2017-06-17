@@ -30,17 +30,15 @@ if(isset($_SESSION['usuario'])){
 
 require_once("header.php");
 require_once("funciones.php");
-echo "id de la peli elegida -> ".$_GET['idpelicula'];
 
 if ($usuario->getUsuario()){
-    echo "detalles con comentarios";
     detalleconcomentarios($conexion,$_GET['idpelicula'] ,$_SESSION['usuarioid']);
 } else {
     detalleconcomentarios($conexion,$_GET['idpelicula'] ,null);
 
     
 };
-
+include("footer.php")
 ?>
     <script src="../js/jquery.min.js"></script>
         <script src="../js/funciones.js"></script>

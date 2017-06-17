@@ -10,13 +10,13 @@
 </head>
 <body>
 
-<div style="padding:10px;">
+
     <?php
     session_start();
 
     require_once("header.php");
 
-    
+    echo "<div style='padding:10px;'>";
 if(!isset($_SESSION['admin'])){
    header("location:../index.php");
  
@@ -30,9 +30,13 @@ echo '<div class="page-header">
 tablabackend($conexion);
 
     echo '<a href="altapelicula.php" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar Pelicula</a>';
-    
+     echo "</div>";
+require_once("footer.php");
     ?>
-    </div>
+    
+
+
+        
      <script src="../js/jquery.min.js"></script>
     
     <script src="../js/bootstrap.min.js"></script>

@@ -1,6 +1,5 @@
-validaciones
-    en alta de comentario la web permite el ingreso de comentario en blanco.
-    descomentar y verificar validaciones del alta de usuario.
+validaciones  
+    verificar validaciones del alta de usuario.
 
 funcionalidad
 
@@ -10,3 +9,6 @@ conexion
 
 autorizacion
     donde dice " if (isset($_SESSION['usuario'])){" reemplazarlo por consulta del objeto. es del alta de comentario en detalle pelicula.
+
+presentacion
+    cuando pide confirmacion para eliminar pelicula aparece peliculadetalle. eliminar los comentarios.

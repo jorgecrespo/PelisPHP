@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -9,17 +10,14 @@
   <link href="../css/pelis.css" rel="stylesheet">
 </head>
 <body>
-<?php
-require_once("header.php");
 
-require_once("funciones.php");
+<footer>
+  <p>Posted by: Hege Refsnes</p>
+  <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+</footer>
 
-$idpelicula = $_GET['peliculaid'];
-updatepeli($conexion,$idpelicula);
-
-include_once("footer.php");
-?>
     <script src="../js/jquery.min.js"></script>
+      
     
     <script src="../js/bootstrap.min.js"></script>
 </body>

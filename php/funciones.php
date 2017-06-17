@@ -329,7 +329,8 @@ function detalleconcomentarios($conexion, $idpelicula, $idusuario){
             mysqli_free_result($resultado);
         
         // si hay usuario -> formulario para ingresar nuevo comentario.
-        if (isset($_SESSION['usuario'])){
+   //     if (isset($_SESSION['usuario'])){
+        if (isset($idusuario)){
             echo "<form name ='frmcomentario' action='sqlaltacomentario.php' method='post' onsubmit='return validarcomentario()'>";
             echo ' <div class="form-group" style="width:600px; padding:20px">';
             echo ' <label for="accomentario1" id="accomentario">Comentario</label><textarea name="accomentario" id="accomentario1" class="form-control"></textarea><br>';

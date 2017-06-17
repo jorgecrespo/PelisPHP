@@ -18,6 +18,7 @@ echo '<h2>Esta seguro que desea eliminar esta pelicula?</h2>';
 
 detalleconcomentarios($conexion,$_GET['idpelicula'] ,null);
 echo'<a href="sqlbajapelicula.php?idpelicula='.$_GET['idpelicula'].'" class="btn btn-danger">Confirmar</a> <a  href="backend.php" class="btn btn-primary">Cancelar</a>';
+include_once("footer.php");
 ?>
 
      <script src="../js/jquery.min.js"></script>

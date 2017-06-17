@@ -9,8 +9,9 @@
   <link href="../css/pelis.css" rel="stylesheet">
 </head>
 <body>
-
-
+<?php
+include("header.php");
+?>
 <h2>Alta de peliculas</h2>
 <form enctype="multipart/form-data" action="sqlaltapelicula.php" method="POST">
 <div class="form-group" style="width:600px; padding:20px">
@@ -36,6 +37,9 @@
   
 
 </form>
+<?php
+include("footer.php");
+?>
     <script src="../js/jquery.min.js"></script>
     
     <script src="../js/bootstrap.min.js"></script>
