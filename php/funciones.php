@@ -359,12 +359,11 @@ function listaranios($conexion){
       
     $resultado = mysqli_query($conexion, $consulta);
     
-    echo '<div>Año: <ul>';
+   
         while ($fila = mysqli_fetch_array ($resultado)) {
-            echo '<a href="index.php?criterio=~'.$fila['anio'].'&orden=2"><li>'.$fila['anio'].'</li></a>';
-            
+            echo '<li><a href="index.php?criterio=~'.$fila['anio'].'&orden=2">'.$fila['anio'].'</a></li>';
+             
 }
-    echo '</ul></div>'; 
 }
 
 function listargeneros($conexion){
@@ -372,12 +371,18 @@ function listargeneros($conexion){
       
     $resultado = mysqli_query($conexion, $consulta);
     
-    echo '<div>Genero: <ul>';
+  
         while ($fila = mysqli_fetch_array ($resultado)) {
-            echo '<a href="index.php?criterio=-'.$fila['id'].'&orden=2"><li>'.$fila['genero'].'</li></a>';
+            echo '<li><a href="index.php?criterio=-'.$fila['id'].'&orden=2">'.$fila['genero'].'</a></li>';
+
+
+
+      
+
+
             
 }
-    echo '</ul></div>';
+
 }
 
 function tablabackend($conexion){
