@@ -17,7 +17,7 @@
 
 
  <div class="page-header"  id="divheader">
-  <h1>Filmic! <small>Opina como quieras.</small></h1>
+  <a href="../index.php"><h1>Filmic! <small>Opina como quieras.</small></h1></a>
 </div>
 
 

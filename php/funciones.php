@@ -230,19 +230,20 @@ echo '<br>';
 
 
 function sqlaltausuario($conexion, $nombre, $apellido, $username, $password, $mail){
-/*
-    $consultax = "SELECT * from usuarios where nombreusuario=$username";
+
+    $consultax = "SELECT * from usuarios where nombreusuario='$username'";
    $resultadox = mysqli_query($conexion, $consultax);
     
     $cantidad = mysqli_num_rows($resultadox);
-var_dump($cantidad);
+  
+   
 
-if ($cantidad==null){ 
- 
-    header('Location:../php/altausuario.php?alerta=Nombre de usuario existente');
+if ($cantidad!==0){ 
+
+   header('Location:../php/altausuario.php?alerta=Nombre de usuario existente');
  
 }
- else { */
+ else { 
   //si el usuario no existe previamente
       $consulta = "INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `nombreusuario`, `password`, `administrador`, `email`) VALUES (NULL, '$nombre', '$apellido', '$username', '$password', '', '$mail')";
     
@@ -254,6 +255,12 @@ if ($cantidad==null){
 
 
 }
+}
+
+
+
+
+
 
 function sqlaltapelicula($conexion, $nombre, $sinopsis, $estreno, $genero, $imagen, $tipoimagen){
 

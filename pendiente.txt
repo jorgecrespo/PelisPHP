@@ -1,2 +1,9 @@
 validaciones
     en alta de comentario la web permite el ingreso de comentario en blanco.
+    descomentar y verificar validaciones del alta de usuario.
+
+funcionalidad
+
+
+conexion
+    unificarla en un archivo. sacarla del objeto $administradorSeguridad.php

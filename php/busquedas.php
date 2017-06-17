@@ -8,7 +8,7 @@ $administrador = new AdministradorSeguridad();
 if(isset($_SESSION['usuario'])){  
        $administrador->setUsuario($_SESSION['usuarioid'],$_SESSION['usuario'], $_SESSION['admin']);
 }
-var_dump($administrador);
+//var_dump($administrador);
 
 echo '
 <nav class="navbar navbar-default">
