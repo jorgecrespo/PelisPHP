@@ -1,14 +1,28 @@
-validaciones  
-    verificar validaciones del alta de usuario.
+La conexión a la base de datos se realiza de forma modularizada (Usuario, password, nombre de base de datos figura en un único archivo)	0	=>En el archivo administradorSeguridad.php en vez de llamar a la funcion conectar tienen una instancia suelta de la BD.
+Lo hice de esa forma, porque al llamar al metodo "conexion" daba error por tener duplicada dicha funcion.
 
-funcionalidad
+ Registro de usuarios. Se validan campos tanto del lado cliente como del lado servidor. En el servidor se verifica que el nombre de usuario no exista. 	0
+ => Si bien se realiza el alta de usuario, las validaciones del lado del cliente no son correctas, verificar como las pide en el enunciado del TP. Las validaciones del lado del cliente no las realiza.
+ Ver expresiones regulares. (sqlaltausuario.php)
+ Dnde dice 2 veces lado del cliente....tengo que usar las mismas validaciones del lado del clientes y del servidor.
+ 
+ 
+Alta de películas. (Solo admins)	0
+=> Cualquier usuario puede dar de alta una pelicula. Funciona de forma correcta pero la imagen no se puede visualizar como corresponde.
+eso es porque no se respeta la proporcion de la imageen?
 
 
-conexion
-    unificarla en un archivo. sacarla del objeto $administradorSeguridad.php
+Baja de películas (Solo admins)	0	
+=> Cualquier usuario puede dar de baja una pelicula. Una vez realizada la baja se pierde el diseño de la pagina y solo se muestra el mensaje que fue eliminada, estaria bueno que respeten el diseño de su sitio para evitar estos cambios bruscos
+ok
 
-autorizacion
-    donde dice " if (isset($_SESSION['usuario'])){" reemplazarlo por consulta del objeto. es del alta de comentario en detalle pelicula.
+Modificación de películas (Solo admins)	0	Cualquier usuario puede modificar una pelicula.
+ok
 
-presentacion
-    cuando pide confirmacion para eliminar pelicula aparece peliculadetalle. eliminar los comentarios.
+Comentar y calificar películas (solo usuarios invitados)	0	
+=> Si bien los realiza de forma correcta, el admistrador no deberia poder comentar. Deberian verificar que un usuario realice solamente un comentario por pelicula debido a que si no controlan esto un mismo usuario podria calificar mas de una vez cada pelicula y esto estaria mal.
+ok. No estaba al tanto de este requerimiento. lo pedian?
+
+
+Implementa clase de autenticación. Usa y maneja excepciones	0	No realiza las acciones correspondientes como pide el enunciado.
+como se hace?
