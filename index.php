@@ -3,7 +3,7 @@
 
 
 //PARA OCULTAR WARNINGS Y NOTICES
-error_reporting(E_ERROR | E_WARNING | E_PARSE); 
+//error_reporting(E_ERROR | E_WARNING | E_PARSE); 
 ?>
 <!doctype html>
 <html>
