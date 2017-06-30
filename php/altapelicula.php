@@ -40,15 +40,47 @@ include("header.php");
    selectaltapeli($conexion);
     ?>
     <label for="apnombre" id="apimagen" >Imagen</label>
-     <input type="file" accept="image/*" id="apimagen" class="form-control" name="imagen"><br>
+     <!--<input type="file" accept="image/*" id="apimagen" class="form-control" name="imagen"><br> -->
+         <input type='file' id="apimagen" accept="image/*" class="form-control" name="imagen"> <br>
+    <img id="preViewImg" src="#" alt="imagen" class="img-thumbnail">
+<br><br><br><br>
           <input type="submit" value="Guardar" class="btn btn-success">
+    
+    
+<script>
 
-   </div>
+
+
+function readURL(input) {
+ if (input.files && input.files[0]) {
+     var reader = new FileReader();
+     reader.onload = function (e) {
+        $('#preViewImg').attr('src', e.target.result);
+     }
+ 
+    reader.readAsDataURL(input.files[0]);
+ }
+}
+ 
+$(document).on('change','#apimagen',function(){
+    readURL(this);
+});
+ 
+</script>
+
+
+
+
+
+
+    <?php
+
+   echo '</div>
  
   
 
-</form>
-<?php
+</form>';
+
 include("footer.php");
 ?>
     <script src="../js/jquery.min.js"></script>
