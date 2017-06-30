@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
  class AdministradorSeguridad { 
 
 		private $idUsuario=0;
-		private $nombreUsuario;
+		private $nombreUsuario='';
 		private $esAdmin;
      
 	function ingresar($nombreUsuario, $clave) { 
@@ -63,17 +63,17 @@ mysqli_set_charset($conexion, "utf8");
 	
     function esAdministrador() { 
         
-		return ($this->esAdmin);
+		return ($this->esAdmin==1);
     }
 
 	function usuarioLogeado(){
 		
-		return ($this->idUsuario); 
+		return ($this->idUsuario!=0); 
 	 
 } 
 function nombreUsuarioLogeado(){
 	
-		return ($this->nombreUsuario); 
+		return ($this->nombreUsuario!=''); 
 } 
 
 	function setUsuario($id, $nombre, $admin){

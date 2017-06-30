@@ -10,6 +10,17 @@
 </head>
 <body>
 <?php
+  session_start();
+
+
+include("AdministradorSeguridad.php");
+$administrador = new AdministradorSeguridad();
+$administrador->setUsuario($_SESSION['usuarioid'],$_SESSION['usuario'],$_SESSION['admin']);
+
+if(!$administrador->esAdministrador()){
+   header("location:../index.php");
+ 
+ }
 include("header.php");
 ?>
 <h2>Alta de peliculas</h2>

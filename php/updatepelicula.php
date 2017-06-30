@@ -10,6 +10,19 @@
 </head>
 <body>
 <?php
+
+  session_start();
+
+
+include("AdministradorSeguridad.php");
+$administrador = new AdministradorSeguridad();
+$administrador->setUsuario($_SESSION['usuarioid'],$_SESSION['usuario'],$_SESSION['admin']);
+
+if(!$administrador->esAdministrador()){
+   header("location:../index.php");
+ 
+ }
+
 require_once("header.php");
 
 require_once("funciones.php");

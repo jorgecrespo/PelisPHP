@@ -81,4 +81,6 @@ if (!$administrador->usuarioLogeado()){
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>';
+var_dump($administrador);
+//var_dump($_SESSION);
 ?>

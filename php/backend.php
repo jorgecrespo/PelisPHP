@@ -14,10 +14,16 @@
     <?php
     session_start();
 
+
+include("AdministradorSeguridad.php");
+$administrador = new AdministradorSeguridad();
+$administrador->setUsuario($_SESSION['usuarioid'],$_SESSION['usuario'],$_SESSION['admin']);
+
+
     require_once("header.php");
 
     echo "<div style='padding:10px;'>";
-if(!isset($_SESSION['admin'])){
+if(!$administrador->esAdministrador()){
    header("location:../index.php");
  
  }

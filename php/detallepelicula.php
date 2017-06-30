@@ -13,25 +13,16 @@
 <?php   
 session_start();
 
-include("Usuario.php");
+include("AdministradorSeguridad.php");
+$administrador = new AdministradorSeguridad();
+$administrador->setUsuario($_SESSION['usuarioid'],$_SESSION['usuario'],$_SESSION['admin']);
 
- $usuario = new Usuario;
-if(isset($_SESSION['usuario'])){
-       
-        $usuario->setUsuario($_SESSION['usuario']);
-        if (isset($_SESSION['admin'])){
-        $usuario->setRol($_SESSION['admin']);
-        }
-        else{
-          $usuario->setRol(0);
-        }
-
-}
+ 
 
 require_once("header.php");
 require_once("funciones.php");
 
-if ($usuario->getUsuario()){
+if ($administrador->usuarioLogeado() and !$administrador->esAdministrador()){
     detalleconcomentarios($conexion,$_GET['idpelicula'] ,$_SESSION['usuarioid']);
 } else {
     detalleconcomentarios($conexion,$_GET['idpelicula'] ,null);

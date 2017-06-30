@@ -1,14 +1,5 @@
-validaciones  
-    verificar validaciones del alta de usuario.
+> Si bien se realiza el alta de usuario, las validaciones del lado del cliente no son correctas, verificar como las pide en el enunciado del TP. Las validaciones del lado del cliente no las realiza.
 
-funcionalidad
+ver porque dice "usuario 1" en el index
 
-
-conexion
-    unificarla en un archivo. sacarla del objeto $administradorSeguridad.php
-
-autorizacion
-    donde dice " if (isset($_SESSION['usuario'])){" reemplazarlo por consulta del objeto. es del alta de comentario en detalle pelicula.
-
-presentacion
-    cuando pide confirmacion para eliminar pelicula aparece peliculadetalle. eliminar los comentarios.
+cuando se da de alta una peli no se ve la imagen que se selecciona.
