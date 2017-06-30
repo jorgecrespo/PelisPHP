@@ -433,7 +433,7 @@ function sqlbajapelicula($conexion, $idpelicula){
     }
 
    if (mysqli_query($conexion, $consulta)){
-       echo"comentarios borrados exitosamente";
+     //  echo"comentarios borrados exitosamente";
    } else {
        echo"error al borrar comentarios ->". mysqli_error($conexion);
    };
@@ -443,7 +443,7 @@ function sqlbajapelicula($conexion, $idpelicula){
       
 
    if (mysqli_query($conexion, $consulta2)){
-       echo"pelicula borrada exitosamente";
+       echo"Pelicula borrada exitosamente.<br>";
    } else {
        echo"error al borrar pelicula ->". mysqli_error($conexion);
    };
