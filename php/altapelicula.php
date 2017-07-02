@@ -42,7 +42,8 @@ include("header.php");
     <label for="apnombre" id="apimagen" >Imagen</label>
      <!--<input type="file" accept="image/*" id="apimagen" class="form-control" name="imagen"><br> -->
          <input type='file' id="apimagen" accept="image/*" class="form-control" name="imagen"> <br>
-    <img id="preViewImg" src="#" alt="imagen" class="img-thumbnail">
+   <!-- <img id="preViewImg" src="#" alt="imagen" class="img-thumbnail"> -->
+   <img id="preViewImg" src="../img/logo.jpg" style="width:200px;height:auto;" alt="imagen" class="img-thumbnail">
 <br><br><br><br>
           <input type="submit" value="Guardar" class="btn btn-success">
     
