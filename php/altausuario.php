@@ -16,10 +16,12 @@ require_once("header.php");
 echo "<h2>Alta de usuarios</h2>";
 
 if (isset($_GET['alerta'])){
-    echo "<h3>".$_GET['alerta']."</h3>";
+    echo "<h3 style='color:red;'>".$_GET['alerta']."</h3>";
 }
 
 ?>
+
+
 <form action="sqlaltausuario.php" method="POST" onsubmit="return validarsingup();">
     <div class="form-group" style="width:600px; padding:20px">
         <label for="aunombre">Nombre</label>

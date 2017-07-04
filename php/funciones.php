@@ -148,7 +148,7 @@ if (isset($_GET['orden'])){$orden = $_GET['orden'];} else {$orden = 1;}
 
 
  echo '<div style="margin-left:25%;padding:1px 16px;height:1000px;">';  
- 
+ echo '<h5>If $criterio empieza con letra o numero, mostrar =>Resultado de :'.$criterio.' </h5>';
  echo 'Ordenar por  <a href="index.php?criterio='.$criterio.'&orden=3"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a> Año <a href="index.php?criterio='.$criterio.'&orden=4"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a> o por <a href="index.php?criterio='.$criterio.'&orden=1"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a> Nombre <a href="index.php?criterio='.$criterio.'&orden=2"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>';
  
 
@@ -240,22 +240,70 @@ function sqlaltausuario($conexion, $nombre, $apellido, $username, $password, $ma
 
 if ($cantidad!==0){ 
 
-   header('Location:../php/altausuario.php?alerta=Nombre de usuario existente');
+   header('Location:../php/altausuario.php?alerta=Nombre de usuario ya registrado.');
  
 }
- else { 
-  //si el usuario no existe previamente
+ else {
+
+    // aca las validaciones de php
+     $alfabetico = '/^[A-Z üÜáéíóúÁÉÍÓÚñÑ]{1,50}$/i'; //valores alfabetico
+     $alfanumerico = '/\w/';
+     $minusculas =  "/[a-z]+/";
+     $mayusculas = "/[A-Z]+/";
+     $especiales = "/[\^$.*@+?=!:|\\/()\[\]{}]+|[0-9]+/";
+     $valido = false;
+
+     if ((empty($nombre) || (!preg_match($alfabetico,$nombre)))){
+         header('Location:../php/altausuario.php?alerta=El nombre debe ser alfabetico y no puede ser vacio.');
+              $valido = false;
+     } else if ((empty($apellido) || (!preg_match($alfabetico,$apellido)))){
+         header('Location:../php/altausuario.php?alerta=El apellido  debe ser alfabetico y no puede ser vacio.');
+              $valido = false;
+     } else if ((strlen($username)<6) || (!preg_match($alfanumerico, $username))){
+        header('Location:../php/altausuario.php?alerta=El nombre de usuario debe ser alfanumerico de al menos 6 caracteres.');
+             $valido = false;
+     }
+      else if ((strlen($password)<6) || (!preg_match($minusculas, $password)) || (!preg_match($mayusculas, $password)) || (!preg_match($especiales, $password) )){
+/*
+          if (strlen($password)<6) {
+          header('Location:../php/altausuario.php?alerta=La contraseña no es segura o tiene menos de 6 caracteres.1');
+               $valido = false;
+          }
+          if (!preg_match($minusculas, $password)) {
+          header('Location:../php/altausuario.php?alerta=La contraseña no es segura o tiene menos de 6 caracteres.2');
+               $valido = false;
+          }
+           if (!preg_match($mayusculas, $password)) {
+          header('Location:../php/altausuario.php?alerta=La contraseña no es segura o tiene menos de 6 caracteres.3');
+               $valido = false;
+          }
+           if (!preg_match($especiales, $password)) {
+          header('Location:../php/altausuario.php?alerta=La contraseña no es segura o tiene menos de 6 caracteres.4');
+               $valido = false;*/
+
+                header('Location:../php/altausuario.php?alerta=La contraseña no es segura o tiene menos de 6 caracteres.');
+               $valido = false;
+          
+     } else {
+              $valido = true;
+     }
+
+   
+
+ if ($valido){
+  //si el usuario no existe previamente y los valores son validos.
+
       $consulta = "INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `nombreusuario`, `password`, `administrador`, `email`) VALUES (NULL, '$nombre', '$apellido', '$username', '$password', '', '$mail')";
     
     $resultado = mysqli_query($conexion, $consulta);
     mysqli_close($conexion);
 
     echo '<p>Usuario dado de alta. Haga click <a href="singin.php">aqui</a> para iniciar su sesion.</p>';
- // }
+  }
 
+ }
+}
 
-}
-}
 
 
 
