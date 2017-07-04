@@ -2,4 +2,7 @@
 
 ver porque dice "usuario 1" en el index
 
-cuando se da de alta una peli no se ve la imagen que se selecciona.
+nombre y apellido no vacios y alfabeticos
+nombre de usuario con 6 digitos y alfanumerico
+clave 6 digitos, minusculas, mayusculas y al menos un numero o simbolo.
+
