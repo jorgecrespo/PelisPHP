@@ -60,6 +60,9 @@ require_once("header.php");
 
 <?php
 
+//PRUEBA DE LA CLASE DE AUTENTICACION
+//var_dump($userDB);
+
 
 
 if (isset($_GET['alerta'])){

@@ -31,22 +31,26 @@ mysqli_set_charset($conexion, "utf8");
 
     $userDB = mysqli_query($conexion, $consulta);
 		
-	
-		// controlar autenticacion
-		if ($userDB == null) {
-			// lanzo exception si hay error
-			throw new ErrorException("El usuario no existe.", 0);
-		}
-		//"clave ->".$clave, 0, $severidad, $fichero, $línea 
-		//ver que son los parametros de la excepcion
 		$fila = $userDB->fetch_assoc();
+
+		if (!isset($fila['nombreusuario'])||($fila['nombreusuario']==null)){
+	
+			// lanzo exception si hay error
+			
+			throw new ErrorException("El usuario no existe.", 0);
+		} else {
+var_dump($userDB);
+		}
+	
+	//	$fila = $userDB->fetch_assoc();
 		if ($fila['password'] != $clave) {
 			// lanzo exception si hay error
-			throw new ErrorException("Clave incorrecta", 0);
+			throw new ErrorException("Clave incorrecta.", 0);
 			// "clave ->".$clave, 0, $severidad, $fichero, $línea
 		}
 
-	//	$usuario = new Usuario;
+	
+	
 		$this->nombreUsuario = $fila["nombreusuario"];
 		$_SESSION['usuario'] = $this->nombreUsuario;
 		
@@ -57,7 +61,7 @@ mysqli_set_charset($conexion, "utf8");
 		$this->esAdmin = $fila["administrador"];
 		$_SESSION['admin']=$this->esAdmin;
 	
-		// retornas el usuario, con los roles
+	
 	
     } 
 	

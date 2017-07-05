@@ -1,3 +1,4 @@
 el modificar pelicula no muestra la previa de la imagen seleccionada.
 
 nunca dice que el usuario no existe. solo que la clave es incorrecta
+
