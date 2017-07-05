@@ -66,8 +66,10 @@ if (isset($_GET['alerta'])){
 
 
     var alfanumerico = /^[\w]+$/;
-    //var tipopass = ^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?([0-9]|\W)).{6,})\S$;
- var tipopass = /^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?([0-9]|\W)).{6,})\S$/;
+var tipopass = /^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?([0-9]|\W)).{6,})\S$/;
+
+var alfabetico = /^[A-Za-z]+$/;
+
 
     if (user === "" || nombre === ""||pass === "" || pass2 === ""||mail === ""||apellido===""){
         alert("Debe completar todos los campos.");
@@ -79,11 +81,11 @@ if (isset($_GET['alerta'])){
         else if (user.length<6 || pass.length<6){
         alert("Tanto el usuario como la contraseña deben tener 6 o mas caracteres.");
         return false;
-    } else if (!alfanumerico.test(nombre)){
-        alert("El nombre solo admite caracteres alfanumericos.");
+        } else if (!alfabetico.test(nombre)){
+        alert("El nombre solo admite caracteres alfabéticos.");
         return false;
-    } else if (!alfanumerico.test(apellido)){
-        alert("El apellido solo admite caracteres alfanumericos.");
+    } else if (!alfabetico.test(apellido)){
+        alert("El apellido solo admite caracteres alfabeticos.");
         return false;
     }
      else if (!alfanumerico.test(user)){
@@ -93,6 +95,7 @@ if (isset($_GET['alerta'])){
         alert("el pass no es suficientemente seguro.");
         return false;
     }
+   
  }
  
 </script>
