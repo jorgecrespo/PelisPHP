@@ -13,8 +13,8 @@
 
 <footer>
 <hr>
-  <p>Posted by: Hege Refsnes</p>
-  <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+  <p>Realizacion: Jorge Crespo</p>
+  <p>Para mas información: <a href="mailto:jcrespo@example.com">jcrespo@example.com</a>.</p>
 </footer>
 
     <script src="../js/jquery.min.js"></script>

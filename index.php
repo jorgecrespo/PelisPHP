@@ -20,8 +20,10 @@
   
 <?php    
     
-
-require_once("php/header.php");
+echo ' <div class="page-header"  id="divheader">
+  <a href="index.php"><h1>Filmic! <small>Opina como quieras.</small></h1></a>
+</div>';
+//require_once("php/header.php");
 
     
 
@@ -37,7 +39,14 @@ include("php/listapeliculas.php");
     
 
     
-include("php/footer.php")
+//include("php/footer.php")
+echo'
+<footer>
+<hr>
+  <p>Realizacion: Jorge Crespo</p>
+  <p>Para mas información: <a href="mailto:jcrespo@example.com">jcrespo@example.com</a>.</p>
+</footer>';
+
 
 ?>
     

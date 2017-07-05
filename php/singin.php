@@ -26,12 +26,18 @@ if (parametro.length>0){
     user = document.getElementById("loginuser").value;
     pass = document.getElementById("loginpass").value;
     var alfanumerico = /^[\w]+$/;
-    var tipopass = ^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?([0-9]|\W)).{6,})\S$;
 
-    if (user === "" || pass === ""){
+
+    if (user == "" || pass == ""){
         alert("Debe completar los dos campos para inciar sesion.");
         return false;
-    } 
+    
+    } else if (user.length<6 || pass.length<6){
+         alert("Tanto el usuario como la contraseña deben tener 6 o mas caracteres.");
+        return false;
+    }if (!alfanumerico.test(user)){
+        alert("El nombre de usuario solo admite caracteres alfanumericos.");
+        return false;}
    
 
 };
@@ -57,7 +63,7 @@ require_once("header.php");
 
 
 if (isset($_GET['alerta'])){
-    echo "<h3>".$_GET['alerta']."</h3>";
+    echo "<h3 style='color:red'>".$_GET['alerta']."</h3>";
 }
 
 ?>

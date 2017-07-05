@@ -148,7 +148,10 @@ if (isset($_GET['orden'])){$orden = $_GET['orden'];} else {$orden = 1;}
 
 
  echo '<div style="margin-left:25%;padding:1px 16px;height:1000px;">';  
- echo '<h5>If $criterio empieza con letra o numero, mostrar =>Resultado de :'.$criterio.' </h5>';
+ if ((substr($criterio, 0, 1)!='~') && (substr($criterio, 0, 1)!='-') && ($criterio!='')){
+ echo '<h2><small>Resultado de :</small>'.$criterio.' </h2>';
+ }
+ 
  echo 'Ordenar por  <a href="index.php?criterio='.$criterio.'&orden=3"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a> Año <a href="index.php?criterio='.$criterio.'&orden=4"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a> o por <a href="index.php?criterio='.$criterio.'&orden=1"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a> Nombre <a href="index.php?criterio='.$criterio.'&orden=2"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>';
  
 
@@ -395,6 +398,7 @@ function detalleconcomentarios($conexion, $idpelicula, $idusuario){
 
         $consulta2 = "SELECT comentarios.fecha as 'fecha', comentarios.comentario as 'comentario', comentarios.calificacion as 'calificacion', usuarios.nombre, usuarios.apellido FROM comentarios inner join usuarios on comentarios.usuarios_id = usuarios.id WHERE peliculas_id = $idpelicula ORDER BY comentarios.fecha DESC";
     $resultado2 = mysqli_query($conexion, $consulta2);
+    
         if ($resultado2){
             
             echo "<ul>";
